@@ -2,7 +2,7 @@ const privileges = require("./shareData/privileges.js");
 // 权限模块
 module.exports = {
   // 获取权限列表
-  "GET /v2/bo/role/list": {
+  "GET /api/v2/bo/role/list": {
     handler: (req, res) => {
       return {
         code: "0",
@@ -257,7 +257,7 @@ module.exports = {
     },
   },
   //获取用户权限详情
-  "GET /v2/bo/role/detail": {
+  "GET /api/v2/bo/role/detail": {
     handler: (req, res) => {
       console.log("请求信息:", req.query);
       const { boRoleId } = req.query;
@@ -285,7 +285,7 @@ module.exports = {
     },
   },
   // 启用用户权限
-  "POST /v2/bo/role/inactive": {
+  "POST /api/v2/bo/role/inactive": {
     handler: (req, res) => {
       console.log("请求信息:", req.body);
       if (!req.body.boRoleId) {
@@ -303,7 +303,7 @@ module.exports = {
     },
   },
   // 停用用户权限
-  "POST /v2/bo/role/active": {
+  "POST /api/v2/bo/role/active": {
     handler: (req, res) => {
       console.log("请求信息:", req.body);
       if (!req.body.boRoleId) {

@@ -3,7 +3,7 @@ const privileges = require('./shareData/privileges.js');
 // 用户模块的接口配置
 module.exports = {
   // 用户信息接口
-  "GET /api/user/info": {
+  "GET /api/v2/user/info": {
     handler: (req, res) => {
       console.log("请求地址：", req.originalUrl);
       const { userId } = req.query;
@@ -34,7 +34,7 @@ module.exports = {
     },
   },
   // 用户登录接口（新增）
-  "POST /v2/public/bo/auth/login": {
+  "POST /api/v2/public/bo/auth/login": {
     handler: (req, res) => {
       const { subject, password } = req.body;
       console.log("请求信息：", req.body);
@@ -69,7 +69,7 @@ module.exports = {
     },
   },
   // 错误示例接口
-  "GET /api/error/demo": {
+  "GET /api/v2/error/demo": {
     handler: (req, res) => {
       res.status(500);
       return {
